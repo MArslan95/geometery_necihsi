@@ -1,0 +1,7 @@
+true\pred,Weeds_1,Weeds_2,Fallow,Fallow_rough_plow,Fallow_smooth,Stubble
+Weeds_1,1391,15,0,0,0,0
+Weeds_2,11,2597,0,0,0,0
+Fallow,0,0,1383,0,0,0
+Fallow_rough_plow,0,0,0,974,2,0
+Fallow_smooth,0,0,0,22,1852,0
+Stubble,0,0,0,0,0,2771

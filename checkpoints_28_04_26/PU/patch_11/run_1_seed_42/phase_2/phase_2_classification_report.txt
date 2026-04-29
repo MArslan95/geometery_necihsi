@@ -1,0 +1,38 @@
+Classification Report - Phase 2
+==========================================================================================
+
+OA: 95.6519%
+AA: 94.9618%
+Kappa: 94.2756%
+Macro-F1: 95.2821%
+
+              precision    recall  f1-score   support
+
+     Asphalt     0.9423    0.9983    0.9695      4642
+     Meadows     0.9917    0.9495    0.9701     13054
+      Gravel     0.9685    0.9224    0.9449      1469
+       Trees     0.9781    0.9767    0.9774      2145
+     Painted     0.9968    1.0000    0.9984       942
+        Soil     0.8365    0.9696    0.8982      3520
+     Bitumen     1.0000    0.8195    0.9008       931
+      Bricks     0.9459    0.9286    0.9372      2578
+     Shadows     0.9760    0.9819    0.9789       663
+
+    accuracy                         0.9565     29944
+   macro avg     0.9595    0.9496    0.9528     29944
+weighted avg     0.9598    0.9565    0.9569     29944
+
+
+Old/New Split
+-------------
+Old Accuracy: 95.8581%
+New Accuracy: 93.9525%
+Harmonic Mean: 94.8958%
+Old Samples: 26703
+New Samples: 3241
+
+Invalid Prediction Rate
+-----------------------
+0.0000%
+Predicted unseen classes: []
+Predicted unseen count: 0

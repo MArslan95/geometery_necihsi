@@ -1,0 +1,36 @@
+Classification Report - Phase 1
+==========================================================================================
+
+OA: 99.7815%
+AA: 99.6655%
+Kappa: 99.7013%
+Macro-F1: 99.5904%
+
+                     precision    recall  f1-score   support
+
+               Corn     0.9995    0.9973    0.9984     24158
+             Cotton     0.9968    0.9957    0.9962      5862
+             Sesame     0.9981    0.9986    0.9984      2122
+ Broad-leaf soybean     0.9977    0.9979    0.9978     44249
+Narrow-leaf soybean     0.9887    0.9928    0.9907      2906
+               Rice     0.9854    0.9953    0.9903      8298
+              Water     1.0000    0.9989    0.9995     46939
+
+           accuracy                         0.9978    134534
+          macro avg     0.9952    0.9967    0.9959    134534
+       weighted avg     0.9978    0.9978    0.9978    134534
+
+
+Old/New Split
+-------------
+Old Accuracy: 99.7415%
+New Accuracy: 99.8389%
+Harmonic Mean: 99.7902%
+Old Samples: 79297
+New Samples: 55237
+
+Invalid Prediction Rate
+-----------------------
+0.0000%
+Predicted unseen classes: []
+Predicted unseen count: 0

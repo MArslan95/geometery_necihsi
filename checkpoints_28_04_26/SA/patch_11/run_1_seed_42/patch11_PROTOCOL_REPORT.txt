@@ -1,0 +1,300 @@
+Geometry-Native NECIL-HSI Report - SA
+Run: 1/1 | Seed: 42
+Date: 2026-04-28 16:14:36
+======================================================================
+A_last: 95.03%
+A_avg:  97.67%
+F_avg:  1.54%
+H_last: 97.25%
+Old/New: 94.87% / 99.76%
+======================================================================
+
+Label Policy:
+{
+  "method": "SA",
+  "has_background": true,
+  "background_label": 0,
+  "raw_class_values": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "label_to_train": {
+    "1": 0,
+    "2": 1,
+    "3": 2,
+    "4": 3,
+    "5": 4,
+    "6": 5,
+    "7": 6,
+    "8": 7,
+    "9": 8,
+    "10": 9,
+    "11": 10,
+    "12": 11,
+    "13": 12,
+    "14": 13,
+    "15": 14,
+    "16": 15
+  },
+  "train_to_label": {
+    "0": 1,
+    "1": 2,
+    "2": 3,
+    "3": 4,
+    "4": 5,
+    "5": 6,
+    "6": 7,
+    "7": 8,
+    "8": 9,
+    "9": 10,
+    "10": 11,
+    "11": 12,
+    "12": 13,
+    "13": 14,
+    "14": 15,
+    "15": 16
+  },
+  "num_classes": 16,
+  "target_names": [
+    "Weeds_1",
+    "Weeds_2",
+    "Fallow",
+    "Fallow_rough_plow",
+    "Fallow_smooth",
+    "Stubble",
+    "Celery",
+    "Grapes_untrained",
+    "Soil_vinyard_develop",
+    "Corn_Weeds",
+    "Lettuce_4wk",
+    "Lettuce_5wk",
+    "Lettuce_6wk",
+    "Lettuce_7wk",
+    "Vinyard_untrained",
+    "Vinyard_trellis"
+  ],
+  "gt_unique_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ]
+}
+
+Configuration:
+base_classifier_mode: geometry_only
+incremental_classifier_mode: calibrated_geometry
+eval_classifier_mode: calibrated_geometry
+eval_semantic_mode: identity
+classifier_use_bias: True
+use_geom_temperature: True
+min_temperature: 0.25
+max_temperature: 4.0
+debias_strength: 0.1
+energy_normalize_by_dim: True
+reliability_energy_weight: 0.05
+volume_energy_weight: 0.0
+max_classifier_bias_abs: 0.5
+max_classifier_debias_abs: 0.25
+allow_legacy_classifier_modes: False
+use_adaptive_fusion: False
+geometry_variance_shrinkage: 0.1
+geometry_max_variance_ratio: 50.0
+geometry_min_reliability: 0.05
+geometry_adjacency_temperature: 1.0
+geometry_energy_temperature: 1.0
+geometry_volume_temperature: 1.0
+use_geometry_risk_controller: False
+adaptive_update_after_validation: True
+risk_replay_alpha: 0.8
+risk_sep_beta: 1.2
+risk_align_gamma: 0.8
+risk_margin_delta: 0.6
+risk_max_replay_weight: 2.5
+risk_max_insert_weight: 0.04
+risk_max_margin: 5.0
+adaptive_replay_min: 32
+adaptive_replay_max: 128
+adaptive_replay_power: 1.0
+adaptive_margin_strength: 1.0
+refresh_before_validation: True
+validation_refresh_every: 1
+best_state_metric: hm
+early_stop_metric: hm
+early_stop_patience: 0
+geometry_calibrate_basis: False
+geometry_calibration_hidden_dim: 128
+geometry_calibration_dropout: 0.1
+geometry_calibration_weight: 0.018
+geometry_max_mean_scale: 0.1
+geometry_max_var_scale: 0.1
+geometry_max_basis_scale: 0.03
+synthetic_replay_weight: 1.2
+synthetic_replay_per_class: 64
+replay_subspace_scale: 0.75
+replay_residual_scale: 0.18
+replay_geometry_weight: 0.08
+align_mean_weight: 0.04
+align_basis_weight: 0.015
+align_var_weight: 0.006
+insert_weight: 0.012
+insert_margin: 3.5
+old_new_energy_margin: 3.5
+new_volume_weight: 0.001
+new_volume_target: 2.0
+token_loss_weight: 0.0
+token_spectral_weight: 0.25
+token_spatial_weight: 0.25
+token_cross_weight: 0.5
+token_fused_weight: 0.0
+token_match_distance_threshold: 1.5
+token_reliability_threshold: 0.35
+spectral_guidance_weight: 0.005
+band_guidance_weight: 0.002
+base_compact: 0.05
+base_sep: 0.05
+base_ortho: 0.03
+base_margin: 1.0
+base_center_norm: 0.01
+base_radius: 0.01
+calibration_epochs: 3
+calibration_lr: 0.0001
+calibration_replay_weight: 1.0
+bank_refresh_every: 1
+incremental_warmup_epochs: 3
+freeze_classifier_during_incremental: False
+freeze_semantic_encoder_during_incremental: True
+unfreeze_last_backbone_during_incremental: False
+freeze_projection_during_incremental: True
+strict_non_exemplar: True
+dropout: 0.1
+semantic_dropout: 0.1
+projection_dropout: 0.1
+backbone_norm: layer
+ssm_residual_scale_init: 0.7
+fusion_residual_scale: 0.3
+token_temperature: 0.07
+loss_scale: 8.0
+geom_var_floor: 0.0001
+epochs_base: 100
+epochs_inc: 25
+lr: 5e-05
+batch_size: 64
+seed: 42
+save_classification_report: True
+save_final_classification_report: True
+
+Phase History:
+Phase 0: OA=99.55%, AA=99.52%, Old=0.00%, New=99.55%, H=0.00%, Kappa=99.44%, F1=99.45%
+Phase 1: OA=99.84%, AA=99.75%, Old=99.66%, New=99.97%, H=99.81%, Kappa=99.80%, F1=99.70%
+Phase 2: OA=99.71%, AA=99.73%, Old=99.67%, New=99.91%, H=99.79%, Kappa=99.66%, F1=99.65%
+Phase 3: OA=94.22%, AA=98.03%, Old=93.13%, New=99.31%, H=96.12%, Kappa=93.55%, F1=97.60%
+Phase 4: OA=95.03%, AA=98.32%, Old=94.87%, New=99.76%, H=97.25%, Kappa=94.49%, F1=97.95%
+
+Classification Report Files:
+Phase 0:
+  txt_path: ./checkpoints\SA\patch_11\run_1_seed_42\phase_0\phase_0_classification_report.txt
+  json_path: ./checkpoints\SA\patch_11\run_1_seed_42\phase_0\phase_0_classification_report.json
+  confusion_matrix_csv_path: ./checkpoints\SA\patch_11\run_1_seed_42\phase_0\phase_0_confusion_matrix.csv
+  confusion_matrix_npy_path: ./checkpoints\SA\patch_11\run_1_seed_42\phase_0\phase_0_confusion_matrix.npy
+  per_class_csv_path: ./checkpoints\SA\patch_11\run_1_seed_42\phase_0\phase_0_per_class_metrics.csv
+  hsi_style_path: ./checkpoints\SA\patch_11\run_1_seed_42\phase_0\phase_0_HSI_Classification_Report.csv
+Phase 1:
+  txt_path: ./checkpoints\SA\patch_11\run_1_seed_42\phase_1\phase_1_classification_report.txt
+  json_path: ./checkpoints\SA\patch_11\run_1_seed_42\phase_1\phase_1_classification_report.json
+  confusion_matrix_csv_path: ./checkpoints\SA\patch_11\run_1_seed_42\phase_1\phase_1_confusion_matrix.csv
+  confusion_matrix_npy_path: ./checkpoints\SA\patch_11\run_1_seed_42\phase_1\phase_1_confusion_matrix.npy
+  per_class_csv_path: ./checkpoints\SA\patch_11\run_1_seed_42\phase_1\phase_1_per_class_metrics.csv
+  hsi_style_path: ./checkpoints\SA\patch_11\run_1_seed_42\phase_1\phase_1_HSI_Classification_Report.csv
+Phase 2:
+  txt_path: ./checkpoints\SA\patch_11\run_1_seed_42\phase_2\phase_2_classification_report.txt
+  json_path: ./checkpoints\SA\patch_11\run_1_seed_42\phase_2\phase_2_classification_report.json
+  confusion_matrix_csv_path: ./checkpoints\SA\patch_11\run_1_seed_42\phase_2\phase_2_confusion_matrix.csv
+  confusion_matrix_npy_path: ./checkpoints\SA\patch_11\run_1_seed_42\phase_2\phase_2_confusion_matrix.npy
+  per_class_csv_path: ./checkpoints\SA\patch_11\run_1_seed_42\phase_2\phase_2_per_class_metrics.csv
+  hsi_style_path: ./checkpoints\SA\patch_11\run_1_seed_42\phase_2\phase_2_HSI_Classification_Report.csv
+Phase 3:
+  txt_path: ./checkpoints\SA\patch_11\run_1_seed_42\phase_3\phase_3_classification_report.txt
+  json_path: ./checkpoints\SA\patch_11\run_1_seed_42\phase_3\phase_3_classification_report.json
+  confusion_matrix_csv_path: ./checkpoints\SA\patch_11\run_1_seed_42\phase_3\phase_3_confusion_matrix.csv
+  confusion_matrix_npy_path: ./checkpoints\SA\patch_11\run_1_seed_42\phase_3\phase_3_confusion_matrix.npy
+  per_class_csv_path: ./checkpoints\SA\patch_11\run_1_seed_42\phase_3\phase_3_per_class_metrics.csv
+  hsi_style_path: ./checkpoints\SA\patch_11\run_1_seed_42\phase_3\phase_3_HSI_Classification_Report.csv
+Phase 4:
+  txt_path: ./checkpoints\SA\patch_11\run_1_seed_42\phase_4\phase_4_classification_report.txt
+  json_path: ./checkpoints\SA\patch_11\run_1_seed_42\phase_4\phase_4_classification_report.json
+  confusion_matrix_csv_path: ./checkpoints\SA\patch_11\run_1_seed_42\phase_4\phase_4_confusion_matrix.csv
+  confusion_matrix_npy_path: ./checkpoints\SA\patch_11\run_1_seed_42\phase_4\phase_4_confusion_matrix.npy
+  per_class_csv_path: ./checkpoints\SA\patch_11\run_1_seed_42\phase_4\phase_4_per_class_metrics.csv
+  hsi_style_path: ./checkpoints\SA\patch_11\run_1_seed_42\phase_4\phase_4_HSI_Classification_Report.csv
+
+Final Classification Report Files:
+  txt_path: ./checkpoints\SA\patch_11\run_1_seed_42\phase_final_classification_report.txt
+  json_path: ./checkpoints\SA\patch_11\run_1_seed_42\phase_final_classification_report.json
+  confusion_matrix_csv_path: ./checkpoints\SA\patch_11\run_1_seed_42\phase_final_confusion_matrix.csv
+  confusion_matrix_npy_path: ./checkpoints\SA\patch_11\run_1_seed_42\phase_final_confusion_matrix.npy
+  per_class_csv_path: ./checkpoints\SA\patch_11\run_1_seed_42\phase_final_per_class_metrics.csv
+  hsi_style_path: ./checkpoints\SA\patch_11\run_1_seed_42\phase_final_HSI_Classification_Report.csv
+
+Per-Class Forgetting Summary:
+  0 (Weeds_1): first=98.93, best=99.43, last=99.43, forget=0.00
+  1 (Weeds_2): first=99.58, best=99.88, last=99.88, forget=0.00
+  2 (Fallow): first=100.00, best=100.00, last=100.00, forget=0.00
+  3 (Fallow_rough_plow): first=99.80, best=99.80, last=99.80, forget=0.00
+  4 (Fallow_smooth): first=98.83, best=98.93, last=98.93, forget=0.00
+  5 (Stubble): first=100.00, best=100.00, last=100.00, forget=0.00
+  6 (Celery): first=100.00, best=100.00, last=99.96, forget=0.04
+  7 (Grapes_untrained): first=99.94, best=99.94, last=77.54, forget=22.40
+  8 (Soil_vinyard_develop): first=100.00, best=100.00, last=99.49, forget=0.51
+  9 (Corn_Weeds): first=99.91, best=99.91, last=99.87, forget=0.04
+  10 (Lettuce_4wk): first=100.00, best=100.00, last=100.00, forget=0.00
+  11 (Lettuce_5wk): first=99.85, best=99.85, last=99.78, forget=0.07
+  12 (Lettuce_6wk): first=99.53, best=99.53, last=99.53, forget=0.00
+  13 (Lettuce_7wk): first=100.00, best=100.00, last=100.00, forget=0.00
+  14 (Vinyard_untrained): first=99.17, best=99.17, last=99.17, forget=0.00
+  15 (Vinyard_trellis): first=99.76, best=99.76, last=99.76, forget=0.00
+
+Final Per-Class Acc:
+  0 (Weeds_1): 99.43%
+  1 (Weeds_2): 99.88%
+  2 (Fallow): 100.00%
+  3 (Fallow_rough_plow): 99.80%
+  4 (Fallow_smooth): 98.93%
+  5 (Stubble): 100.00%
+  6 (Celery): 99.96%
+  7 (Grapes_untrained): 77.54%
+  8 (Soil_vinyard_develop): 99.49%
+  9 (Corn_Weeds): 99.87%
+  10 (Lettuce_4wk): 100.00%
+  11 (Lettuce_5wk): 99.78%
+  12 (Lettuce_6wk): 99.53%
+  13 (Lettuce_7wk): 100.00%
+  14 (Vinyard_untrained): 99.17%
+  15 (Vinyard_trellis): 99.76%

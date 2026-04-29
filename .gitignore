@@ -1,0 +1,4 @@
+datasets/
+*.log
+*.ckpt  
+checkpoints/

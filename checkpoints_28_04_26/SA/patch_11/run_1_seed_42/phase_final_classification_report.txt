@@ -1,0 +1,45 @@
+Classification Report - Phase final
+==========================================================================================
+
+OA: 95.0326%
+AA: 98.3222%
+Kappa: 94.4901%
+Macro-F1: 97.9542%
+
+                      precision    recall  f1-score   support
+
+             Weeds_1     0.9979    0.9943    0.9961      1406
+             Weeds_2     0.9969    0.9988    0.9979      2608
+              Fallow     0.9978    1.0000    0.9989      1383
+   Fallow_rough_plow     0.9769    0.9980    0.9873       976
+       Fallow_smooth     0.9984    0.9893    0.9938      1874
+             Stubble     1.0000    1.0000    1.0000      2771
+              Celery     1.0000    0.9996    0.9998      2505
+    Grapes_untrained     0.9933    0.7754    0.8710      7890
+Soil_vinyard_develop     1.0000    0.9949    0.9975      4342
+          Corn_Weeds     0.9803    0.9987    0.9894      2294
+         Lettuce_4wk     1.0000    1.0000    1.0000       747
+         Lettuce_5wk     1.0000    0.9978    0.9989      1349
+         Lettuce_6wk     0.9984    0.9953    0.9969       641
+         Lettuce_7wk     0.9973    1.0000    0.9987       749
+   Vinyard_untrained     0.7427    0.9917    0.8493      5087
+     Vinyard_trellis     0.9968    0.9976    0.9972      1265
+
+            accuracy                         0.9503     37887
+           macro avg     0.9798    0.9832    0.9795     37887
+        weighted avg     0.9616    0.9503    0.9508     37887
+
+
+Old/New Split
+-------------
+Old Accuracy: 94.8692%
+New Accuracy: 99.7628%
+Harmonic Mean: 97.2545%
+Old Samples: 36622
+New Samples: 1265
+
+Invalid Prediction Rate
+-----------------------
+0.0000%
+Predicted unseen classes: []
+Predicted unseen count: 0

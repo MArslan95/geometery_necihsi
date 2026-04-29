@@ -1,0 +1,10 @@
+true\pred,Weeds_1,Weeds_2,Fallow,Fallow_rough_plow,Fallow_smooth,Stubble,Celery,Grapes_untrained,Soil_vinyard_develop
+Weeds_1,1396,10,0,0,0,0,0,0,0
+Weeds_2,5,2603,0,0,0,0,0,0,0
+Fallow,0,0,1383,0,0,0,0,0,0
+Fallow_rough_plow,0,0,0,974,2,0,0,0,0
+Fallow_smooth,0,0,0,20,1854,0,0,0,0
+Stubble,0,0,0,0,0,2771,0,0,0
+Celery,0,0,0,0,0,0,2505,0,0
+Grapes_untrained,0,0,0,0,0,0,5,7885,0
+Soil_vinyard_develop,0,0,0,0,0,0,0,0,4342

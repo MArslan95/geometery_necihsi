@@ -1,0 +1,26 @@
+Classification Report - Phase 0
+==========================================================================================
+
+OA: 99.5462%
+AA: 99.5221%
+Kappa: 99.4411%
+Macro-F1: 99.4525%
+
+                   precision    recall  f1-score   support
+
+          Weeds_1     0.9922    0.9893    0.9907      1406
+          Weeds_2     0.9943    0.9958    0.9950      2608
+           Fallow     1.0000    1.0000    1.0000      1383
+Fallow_rough_plow     0.9779    0.9980    0.9878       976
+    Fallow_smooth     0.9989    0.9883    0.9936      1874
+          Stubble     1.0000    1.0000    1.0000      2771
+
+         accuracy                         0.9955     11018
+        macro avg     0.9939    0.9952    0.9945     11018
+     weighted avg     0.9955    0.9955    0.9955     11018
+
+Invalid Prediction Rate
+-----------------------
+0.0000%
+Predicted unseen classes: []
+Predicted unseen count: 0

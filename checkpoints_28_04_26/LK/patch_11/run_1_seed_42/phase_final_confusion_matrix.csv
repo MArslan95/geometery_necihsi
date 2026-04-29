@@ -1,0 +1,10 @@
+true\pred,Corn,Cotton,Sesame,Broad-leaf soybean,Narrow-leaf soybean,Rice,Water,Roads and houses,Mixed weed
+Corn,24022,0,0,5,0,5,0,126,0
+Cotton,0,5769,1,0,8,0,0,84,0
+Sesame,0,0,2110,0,0,0,0,5,7
+Broad-leaf soybean,13,0,0,40296,5,0,0,3799,136
+Narrow-leaf soybean,0,4,0,0,2708,0,0,194,0
+Rice,0,0,0,0,0,7381,0,916,1
+Water,0,0,0,0,0,0,45984,189,766
+Roads and houses,0,2,0,8,7,0,0,4930,40
+Mixed weed,0,0,0,0,0,0,1,511,3148

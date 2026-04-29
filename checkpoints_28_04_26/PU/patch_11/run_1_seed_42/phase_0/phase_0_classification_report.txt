@@ -1,0 +1,25 @@
+Classification Report - Phase 0
+==========================================================================================
+
+OA: 99.6764%
+AA: 99.5107%
+Kappa: 99.4584%
+Macro-F1: 99.5079%
+
+              precision    recall  f1-score   support
+
+     Asphalt     0.9929    0.9994    0.9961      4642
+     Meadows     0.9998    0.9975    0.9986     13054
+      Gravel     0.9979    0.9857    0.9918      1469
+       Trees     0.9847    0.9930    0.9889      2145
+     Painted     1.0000    1.0000    1.0000       942
+
+    accuracy                         0.9968     22252
+   macro avg     0.9951    0.9951    0.9951     22252
+weighted avg     0.9968    0.9968    0.9968     22252
+
+Invalid Prediction Rate
+-----------------------
+0.0000%
+Predicted unseen classes: []
+Predicted unseen count: 0

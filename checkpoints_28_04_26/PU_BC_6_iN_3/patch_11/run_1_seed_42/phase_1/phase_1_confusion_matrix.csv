@@ -1,0 +1,10 @@
+true\pred,Asphalt,Meadows,Gravel,Trees,Painted,Soil,Bitumen,Bricks,Shadows
+Asphalt,4529,0,38,27,0,0,28,17,3
+Meadows,0,12990,0,47,0,17,0,0,0
+Gravel,3,0,1408,0,0,0,2,56,0
+Trees,0,0,0,2128,0,0,0,17,0
+Painted,0,0,0,0,942,0,0,0,0
+Soil,0,38,0,4,0,3478,0,0,0
+Bitumen,44,0,0,5,0,0,882,0,0
+Bricks,110,0,194,47,0,0,0,2227,0
+Shadows,7,0,1,17,4,0,5,0,629

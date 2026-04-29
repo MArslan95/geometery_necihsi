@@ -1,0 +1,7 @@
+true\pred,Alfalfa,Corn-notill,Corn-mintill,Corn,Grass-pasture,Grass-trees
+Alfalfa,21,0,0,0,0,0
+Corn-notill,0,988,1,0,5,5
+Corn-mintill,0,56,514,3,6,2
+Corn,0,4,6,156,0,0
+Grass-pasture,0,0,0,0,338,0
+Grass-trees,0,1,0,2,4,504

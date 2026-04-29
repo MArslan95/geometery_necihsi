@@ -1,0 +1,45 @@
+Classification Report - Phase 4
+==========================================================================================
+
+OA: 87.2442%
+AA: 92.8855%
+Kappa: 85.5070%
+Macro-F1: 87.6426%
+
+                              precision    recall  f1-score   support
+
+                     Alfalfa     0.8750    1.0000    0.9333        21
+                 Corn-notill     0.7860    0.7758    0.7809       999
+                Corn-mintill     0.8598    0.8021    0.8299       581
+                        Corn     0.9022    1.0000    0.9486       166
+               Grass-pasture     0.9302    0.9467    0.9384       338
+                 Grass-trees     0.9688    0.9706    0.9697       511
+         Grass-pasture-mowed     0.2778    1.0000    0.4348         5
+               Hay-windrowed     1.0000    0.9760    0.9879       334
+                        Oats     1.0000    1.0000    1.0000         1
+              Soybean-notill     0.7186    0.8399    0.7745       681
+             Soybean-mintill     0.9104    0.8335    0.8703      1718
+               Soybean-clean     0.8041    0.8410    0.8221       415
+                       Wheat     0.9653    0.9653    0.9653       144
+                       Woods     0.9868    0.9300    0.9576       886
+Buildings-Grass-Trees-Drives     0.7820    0.9963    0.8762       270
+          Stone-Steel-Towers     0.8873    0.9844    0.9333        64
+
+                    accuracy                         0.8724      7134
+                   macro avg     0.8534    0.9289    0.8764      7134
+                weighted avg     0.8785    0.8724    0.8737      7134
+
+
+Old/New Split
+-------------
+Old Accuracy: 87.1429%
+New Accuracy: 98.4375%
+Harmonic Mean: 92.4465%
+Old Samples: 7070
+New Samples: 64
+
+Invalid Prediction Rate
+-----------------------
+0.0000%
+Predicted unseen classes: []
+Predicted unseen count: 0

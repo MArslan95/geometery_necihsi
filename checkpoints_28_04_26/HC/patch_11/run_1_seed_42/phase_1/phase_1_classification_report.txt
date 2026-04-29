@@ -1,0 +1,38 @@
+Classification Report - Phase 1
+==========================================================================================
+
+OA: 90.5150%
+AA: 90.9941%
+Kappa: 88.0888%
+Macro-F1: 88.7244%
+
+               precision    recall  f1-score   support
+
+   Strawberry     0.9912    0.9873    0.9892     31314
+       Cowpea     0.9727    0.7723    0.8610     15927
+      Soybean     0.9832    0.9778    0.9805      7201
+      Sorghum     0.9981    0.9931    0.9956      3747
+Water spinach     0.9633    0.9988    0.9807       840
+   Watermelon     0.8572    0.8516    0.8544      3173
+       Greens     0.5712    0.9964    0.7261      4132
+        Trees     0.8381    0.8579    0.8479     12584
+        Grass     0.7452    0.7544    0.7497      6628
+
+     accuracy                         0.9052     85546
+    macro avg     0.8800    0.9099    0.8872     85546
+ weighted avg     0.9203    0.9052    0.9078     85546
+
+
+Old/New Split
+-------------
+Old Accuracy: 92.4713%
+New Accuracy: 85.3024%
+Harmonic Mean: 88.7423%
+Old Samples: 62202
+New Samples: 23344
+
+Invalid Prediction Rate
+-----------------------
+0.0000%
+Predicted unseen classes: []
+Predicted unseen count: 0

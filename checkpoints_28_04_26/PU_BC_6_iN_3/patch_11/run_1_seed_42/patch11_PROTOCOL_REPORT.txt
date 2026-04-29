@@ -1,0 +1,227 @@
+Geometry-Native NECIL-HSI Report - PU
+Run: 1/1 | Seed: 42
+Date: 2026-04-28 17:12:19
+======================================================================
+A_last: 97.56%
+A_avg:  98.42%
+F_avg:  0.86%
+H_last: 94.00%
+Old/New: 98.85% / 89.60%
+======================================================================
+
+Label Policy:
+{
+  "method": "PU",
+  "has_background": true,
+  "background_label": 0,
+  "raw_class_values": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "label_to_train": {
+    "1": 0,
+    "2": 1,
+    "3": 2,
+    "4": 3,
+    "5": 4,
+    "6": 5,
+    "7": 6,
+    "8": 7,
+    "9": 8
+  },
+  "train_to_label": {
+    "0": 1,
+    "1": 2,
+    "2": 3,
+    "3": 4,
+    "4": 5,
+    "5": 6,
+    "6": 7,
+    "7": 8,
+    "8": 9
+  },
+  "num_classes": 9,
+  "target_names": [
+    "Asphalt",
+    "Meadows",
+    "Gravel",
+    "Trees",
+    "Painted",
+    "Soil",
+    "Bitumen",
+    "Bricks",
+    "Shadows"
+  ],
+  "gt_unique_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ]
+}
+
+Configuration:
+base_classifier_mode: geometry_only
+incremental_classifier_mode: calibrated_geometry
+eval_classifier_mode: calibrated_geometry
+eval_semantic_mode: identity
+classifier_use_bias: True
+use_geom_temperature: True
+min_temperature: 0.25
+max_temperature: 4.0
+debias_strength: 0.1
+energy_normalize_by_dim: True
+reliability_energy_weight: 0.05
+volume_energy_weight: 0.0
+max_classifier_bias_abs: 0.5
+max_classifier_debias_abs: 0.25
+allow_legacy_classifier_modes: False
+use_adaptive_fusion: False
+geometry_variance_shrinkage: 0.1
+geometry_max_variance_ratio: 50.0
+geometry_min_reliability: 0.05
+geometry_adjacency_temperature: 1.0
+geometry_energy_temperature: 1.0
+geometry_volume_temperature: 1.0
+use_geometry_risk_controller: False
+adaptive_update_after_validation: True
+risk_replay_alpha: 0.8
+risk_sep_beta: 1.2
+risk_align_gamma: 0.8
+risk_margin_delta: 0.6
+risk_max_replay_weight: 2.5
+risk_max_insert_weight: 0.04
+risk_max_margin: 5.0
+adaptive_replay_min: 32
+adaptive_replay_max: 128
+adaptive_replay_power: 1.0
+adaptive_margin_strength: 1.0
+refresh_before_validation: True
+validation_refresh_every: 1
+best_state_metric: hm
+early_stop_metric: hm
+early_stop_patience: 0
+geometry_calibrate_basis: False
+geometry_calibration_hidden_dim: 128
+geometry_calibration_dropout: 0.1
+geometry_calibration_weight: 0.018
+geometry_max_mean_scale: 0.1
+geometry_max_var_scale: 0.1
+geometry_max_basis_scale: 0.03
+synthetic_replay_weight: 1.2
+synthetic_replay_per_class: 64
+replay_subspace_scale: 0.75
+replay_residual_scale: 0.18
+replay_geometry_weight: 0.08
+align_mean_weight: 0.04
+align_basis_weight: 0.015
+align_var_weight: 0.006
+insert_weight: 0.012
+insert_margin: 3.5
+old_new_energy_margin: 3.5
+new_volume_weight: 0.001
+new_volume_target: 2.0
+token_loss_weight: 0.0
+token_spectral_weight: 0.25
+token_spatial_weight: 0.25
+token_cross_weight: 0.5
+token_fused_weight: 0.0
+token_match_distance_threshold: 1.5
+token_reliability_threshold: 0.35
+spectral_guidance_weight: 0.005
+band_guidance_weight: 0.002
+base_compact: 0.05
+base_sep: 0.05
+base_ortho: 0.03
+base_margin: 1.0
+base_center_norm: 0.01
+base_radius: 0.01
+calibration_epochs: 3
+calibration_lr: 0.0001
+calibration_replay_weight: 1.0
+bank_refresh_every: 1
+incremental_warmup_epochs: 3
+freeze_classifier_during_incremental: False
+freeze_semantic_encoder_during_incremental: True
+unfreeze_last_backbone_during_incremental: False
+freeze_projection_during_incremental: True
+strict_non_exemplar: True
+dropout: 0.1
+semantic_dropout: 0.1
+projection_dropout: 0.1
+backbone_norm: layer
+ssm_residual_scale_init: 0.7
+fusion_residual_scale: 0.3
+token_temperature: 0.07
+loss_scale: 8.0
+geom_var_floor: 0.0001
+epochs_base: 100
+epochs_inc: 25
+lr: 5e-05
+batch_size: 64
+seed: 42
+save_classification_report: True
+save_final_classification_report: True
+
+Phase History:
+Phase 0: OA=99.28%, AA=99.35%, Old=0.00%, New=99.28%, H=0.00%, Kappa=98.95%, F1=99.07%
+Phase 1: OA=97.56%, AA=96.33%, Old=98.85%, New=89.60%, H=94.00%, Kappa=96.77%, F1=96.22%
+
+Classification Report Files:
+Phase 0:
+  txt_path: ./checkpoints\PU\patch_11\run_1_seed_42\phase_0\phase_0_classification_report.txt
+  json_path: ./checkpoints\PU\patch_11\run_1_seed_42\phase_0\phase_0_classification_report.json
+  confusion_matrix_csv_path: ./checkpoints\PU\patch_11\run_1_seed_42\phase_0\phase_0_confusion_matrix.csv
+  confusion_matrix_npy_path: ./checkpoints\PU\patch_11\run_1_seed_42\phase_0\phase_0_confusion_matrix.npy
+  per_class_csv_path: ./checkpoints\PU\patch_11\run_1_seed_42\phase_0\phase_0_per_class_metrics.csv
+  hsi_style_path: ./checkpoints\PU\patch_11\run_1_seed_42\phase_0\phase_0_HSI_Classification_Report.csv
+Phase 1:
+  txt_path: ./checkpoints\PU\patch_11\run_1_seed_42\phase_1\phase_1_classification_report.txt
+  json_path: ./checkpoints\PU\patch_11\run_1_seed_42\phase_1\phase_1_classification_report.json
+  confusion_matrix_csv_path: ./checkpoints\PU\patch_11\run_1_seed_42\phase_1\phase_1_confusion_matrix.csv
+  confusion_matrix_npy_path: ./checkpoints\PU\patch_11\run_1_seed_42\phase_1\phase_1_confusion_matrix.npy
+  per_class_csv_path: ./checkpoints\PU\patch_11\run_1_seed_42\phase_1\phase_1_per_class_metrics.csv
+  hsi_style_path: ./checkpoints\PU\patch_11\run_1_seed_42\phase_1\phase_1_HSI_Classification_Report.csv
+
+Final Classification Report Files:
+  txt_path: ./checkpoints\PU\patch_11\run_1_seed_42\phase_final_classification_report.txt
+  json_path: ./checkpoints\PU\patch_11\run_1_seed_42\phase_final_classification_report.json
+  confusion_matrix_csv_path: ./checkpoints\PU\patch_11\run_1_seed_42\phase_final_confusion_matrix.csv
+  confusion_matrix_npy_path: ./checkpoints\PU\patch_11\run_1_seed_42\phase_final_confusion_matrix.npy
+  per_class_csv_path: ./checkpoints\PU\patch_11\run_1_seed_42\phase_final_per_class_metrics.csv
+  hsi_style_path: ./checkpoints\PU\patch_11\run_1_seed_42\phase_final_HSI_Classification_Report.csv
+
+Per-Class Forgetting Summary:
+  0 (Asphalt): first=98.56, best=98.56, last=97.57, forget=0.99
+  1 (Meadows): first=99.51, best=99.51, last=99.51, forget=0.00
+  2 (Gravel): first=99.39, best=99.39, last=95.85, forget=3.54
+  3 (Trees): first=99.86, best=99.86, last=99.21, forget=0.65
+  4 (Painted): first=100.00, best=100.00, last=100.00, forget=0.00
+  5 (Soil): first=98.81, best=98.81, last=98.81, forget=0.00
+  6 (Bitumen): first=94.74, best=94.74, last=94.74, forget=0.00
+  7 (Bricks): first=86.38, best=86.38, last=86.38, forget=0.00
+  8 (Shadows): first=94.87, best=94.87, last=94.87, forget=0.00
+
+Final Per-Class Acc:
+  0 (Asphalt): 97.57%
+  1 (Meadows): 99.51%
+  2 (Gravel): 95.85%
+  3 (Trees): 99.21%
+  4 (Painted): 100.00%
+  5 (Soil): 98.81%
+  6 (Bitumen): 94.74%
+  7 (Bricks): 86.38%
+  8 (Shadows): 94.87%

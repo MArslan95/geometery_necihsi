@@ -1,0 +1,300 @@
+Geometry-Native NECIL-HSI Report - HC
+Run: 1/1 | Seed: 42
+Date: 2026-04-27 21:57:51
+======================================================================
+A_last: 82.11%
+A_avg:  89.60%
+F_avg:  16.68%
+H_last: 85.51%
+Old/New: 74.71% / 99.97%
+======================================================================
+
+Label Policy:
+{
+  "method": "HC",
+  "has_background": true,
+  "background_label": 0,
+  "raw_class_values": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "label_to_train": {
+    "1": 0,
+    "2": 1,
+    "3": 2,
+    "4": 3,
+    "5": 4,
+    "6": 5,
+    "7": 6,
+    "8": 7,
+    "9": 8,
+    "10": 9,
+    "11": 10,
+    "12": 11,
+    "13": 12,
+    "14": 13,
+    "15": 14,
+    "16": 15
+  },
+  "train_to_label": {
+    "0": 1,
+    "1": 2,
+    "2": 3,
+    "3": 4,
+    "4": 5,
+    "5": 6,
+    "6": 7,
+    "7": 8,
+    "8": 9,
+    "9": 10,
+    "10": 11,
+    "11": 12,
+    "12": 13,
+    "13": 14,
+    "14": 15,
+    "15": 16
+  },
+  "num_classes": 16,
+  "target_names": [
+    "Strawberry",
+    "Cowpea",
+    "Soybean",
+    "Sorghum",
+    "Water spinach",
+    "Watermelon",
+    "Greens",
+    "Trees",
+    "Grass",
+    "Red roof",
+    "Gray roof",
+    "Plastic",
+    "Bare soil",
+    "Road",
+    "Bright object",
+    "Water"
+  ],
+  "gt_unique_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ]
+}
+
+Configuration:
+base_classifier_mode: geometry_only
+incremental_classifier_mode: calibrated_geometry
+eval_classifier_mode: calibrated_geometry
+eval_semantic_mode: identity
+classifier_use_bias: True
+use_geom_temperature: True
+min_temperature: 0.25
+max_temperature: 4.0
+debias_strength: 0.1
+energy_normalize_by_dim: True
+reliability_energy_weight: 0.05
+volume_energy_weight: 0.0
+max_classifier_bias_abs: 0.5
+max_classifier_debias_abs: 0.25
+allow_legacy_classifier_modes: False
+use_adaptive_fusion: False
+geometry_variance_shrinkage: 0.1
+geometry_max_variance_ratio: 50.0
+geometry_min_reliability: 0.05
+geometry_adjacency_temperature: 1.0
+geometry_energy_temperature: 1.0
+geometry_volume_temperature: 1.0
+use_geometry_risk_controller: False
+adaptive_update_after_validation: True
+risk_replay_alpha: 0.8
+risk_sep_beta: 1.2
+risk_align_gamma: 0.8
+risk_margin_delta: 0.6
+risk_max_replay_weight: 2.5
+risk_max_insert_weight: 0.04
+risk_max_margin: 5.0
+adaptive_replay_min: 32
+adaptive_replay_max: 128
+adaptive_replay_power: 1.0
+adaptive_margin_strength: 1.0
+refresh_before_validation: True
+validation_refresh_every: 1
+best_state_metric: hm
+early_stop_metric: hm
+early_stop_patience: 0
+geometry_calibrate_basis: False
+geometry_calibration_hidden_dim: 128
+geometry_calibration_dropout: 0.1
+geometry_calibration_weight: 0.018
+geometry_max_mean_scale: 0.1
+geometry_max_var_scale: 0.1
+geometry_max_basis_scale: 0.03
+synthetic_replay_weight: 1.2
+synthetic_replay_per_class: 64
+replay_subspace_scale: 0.75
+replay_residual_scale: 0.18
+replay_geometry_weight: 0.08
+align_mean_weight: 0.04
+align_basis_weight: 0.015
+align_var_weight: 0.006
+insert_weight: 0.012
+insert_margin: 3.5
+old_new_energy_margin: 3.5
+new_volume_weight: 0.001
+new_volume_target: 2.0
+token_loss_weight: 0.0
+token_spectral_weight: 0.25
+token_spatial_weight: 0.25
+token_cross_weight: 0.5
+token_fused_weight: 0.0
+token_match_distance_threshold: 1.5
+token_reliability_threshold: 0.35
+spectral_guidance_weight: 0.005
+band_guidance_weight: 0.002
+base_compact: 0.05
+base_sep: 0.05
+base_ortho: 0.03
+base_margin: 1.0
+base_center_norm: 0.01
+base_radius: 0.01
+calibration_epochs: 3
+calibration_lr: 0.0001
+calibration_replay_weight: 1.0
+bank_refresh_every: 1
+incremental_warmup_epochs: 3
+freeze_classifier_during_incremental: False
+freeze_semantic_encoder_during_incremental: True
+unfreeze_last_backbone_during_incremental: False
+freeze_projection_during_incremental: True
+strict_non_exemplar: True
+dropout: 0.1
+semantic_dropout: 0.1
+projection_dropout: 0.1
+backbone_norm: layer
+ssm_residual_scale_init: 0.7
+fusion_residual_scale: 0.3
+token_temperature: 0.07
+loss_scale: 8.0
+geom_var_floor: 0.0001
+epochs_base: 100
+epochs_inc: 25
+lr: 5e-05
+batch_size: 64
+seed: 42
+save_classification_report: True
+save_final_classification_report: True
+
+Phase History:
+Phase 0: OA=99.08%, AA=99.00%, Old=0.00%, New=99.08%, H=0.00%, Kappa=98.61%, F1=98.50%
+Phase 1: OA=90.52%, AA=90.99%, Old=92.47%, New=85.30%, H=88.74%, Kappa=88.09%, F1=88.72%
+Phase 2: OA=90.01%, AA=92.14%, Old=88.35%, New=96.54%, H=92.26%, Kappa=88.35%, F1=88.65%
+Phase 3: OA=86.29%, AA=86.78%, Old=87.08%, New=82.06%, H=84.50%, Kappa=84.52%, F1=84.17%
+Phase 4: OA=82.11%, AA=78.30%, Old=74.71%, New=99.97%, H=85.51%, Kappa=79.02%, F1=74.13%
+
+Classification Report Files:
+Phase 0:
+  txt_path: ./checkpoints\HC\patch_11\run_1_seed_42\phase_0\phase_0_classification_report.txt
+  json_path: ./checkpoints\HC\patch_11\run_1_seed_42\phase_0\phase_0_classification_report.json
+  confusion_matrix_csv_path: ./checkpoints\HC\patch_11\run_1_seed_42\phase_0\phase_0_confusion_matrix.csv
+  confusion_matrix_npy_path: ./checkpoints\HC\patch_11\run_1_seed_42\phase_0\phase_0_confusion_matrix.npy
+  per_class_csv_path: ./checkpoints\HC\patch_11\run_1_seed_42\phase_0\phase_0_per_class_metrics.csv
+  hsi_style_path: ./checkpoints\HC\patch_11\run_1_seed_42\phase_0\phase_0_HSI_Classification_Report.csv
+Phase 1:
+  txt_path: ./checkpoints\HC\patch_11\run_1_seed_42\phase_1\phase_1_classification_report.txt
+  json_path: ./checkpoints\HC\patch_11\run_1_seed_42\phase_1\phase_1_classification_report.json
+  confusion_matrix_csv_path: ./checkpoints\HC\patch_11\run_1_seed_42\phase_1\phase_1_confusion_matrix.csv
+  confusion_matrix_npy_path: ./checkpoints\HC\patch_11\run_1_seed_42\phase_1\phase_1_confusion_matrix.npy
+  per_class_csv_path: ./checkpoints\HC\patch_11\run_1_seed_42\phase_1\phase_1_per_class_metrics.csv
+  hsi_style_path: ./checkpoints\HC\patch_11\run_1_seed_42\phase_1\phase_1_HSI_Classification_Report.csv
+Phase 2:
+  txt_path: ./checkpoints\HC\patch_11\run_1_seed_42\phase_2\phase_2_classification_report.txt
+  json_path: ./checkpoints\HC\patch_11\run_1_seed_42\phase_2\phase_2_classification_report.json
+  confusion_matrix_csv_path: ./checkpoints\HC\patch_11\run_1_seed_42\phase_2\phase_2_confusion_matrix.csv
+  confusion_matrix_npy_path: ./checkpoints\HC\patch_11\run_1_seed_42\phase_2\phase_2_confusion_matrix.npy
+  per_class_csv_path: ./checkpoints\HC\patch_11\run_1_seed_42\phase_2\phase_2_per_class_metrics.csv
+  hsi_style_path: ./checkpoints\HC\patch_11\run_1_seed_42\phase_2\phase_2_HSI_Classification_Report.csv
+Phase 3:
+  txt_path: ./checkpoints\HC\patch_11\run_1_seed_42\phase_3\phase_3_classification_report.txt
+  json_path: ./checkpoints\HC\patch_11\run_1_seed_42\phase_3\phase_3_classification_report.json
+  confusion_matrix_csv_path: ./checkpoints\HC\patch_11\run_1_seed_42\phase_3\phase_3_confusion_matrix.csv
+  confusion_matrix_npy_path: ./checkpoints\HC\patch_11\run_1_seed_42\phase_3\phase_3_confusion_matrix.npy
+  per_class_csv_path: ./checkpoints\HC\patch_11\run_1_seed_42\phase_3\phase_3_per_class_metrics.csv
+  hsi_style_path: ./checkpoints\HC\patch_11\run_1_seed_42\phase_3\phase_3_HSI_Classification_Report.csv
+Phase 4:
+  txt_path: ./checkpoints\HC\patch_11\run_1_seed_42\phase_4\phase_4_classification_report.txt
+  json_path: ./checkpoints\HC\patch_11\run_1_seed_42\phase_4\phase_4_classification_report.json
+  confusion_matrix_csv_path: ./checkpoints\HC\patch_11\run_1_seed_42\phase_4\phase_4_confusion_matrix.csv
+  confusion_matrix_npy_path: ./checkpoints\HC\patch_11\run_1_seed_42\phase_4\phase_4_confusion_matrix.npy
+  per_class_csv_path: ./checkpoints\HC\patch_11\run_1_seed_42\phase_4\phase_4_per_class_metrics.csv
+  hsi_style_path: ./checkpoints\HC\patch_11\run_1_seed_42\phase_4\phase_4_HSI_Classification_Report.csv
+
+Final Classification Report Files:
+  txt_path: ./checkpoints\HC\patch_11\run_1_seed_42\phase_final_classification_report.txt
+  json_path: ./checkpoints\HC\patch_11\run_1_seed_42\phase_final_classification_report.json
+  confusion_matrix_csv_path: ./checkpoints\HC\patch_11\run_1_seed_42\phase_final_confusion_matrix.csv
+  confusion_matrix_npy_path: ./checkpoints\HC\patch_11\run_1_seed_42\phase_final_confusion_matrix.npy
+  per_class_csv_path: ./checkpoints\HC\patch_11\run_1_seed_42\phase_final_per_class_metrics.csv
+  hsi_style_path: ./checkpoints\HC\patch_11\run_1_seed_42\phase_final_HSI_Classification_Report.csv
+
+Per-Class Forgetting Summary:
+  0 (Strawberry): first=99.21, best=99.21, last=80.85, forget=18.36
+  1 (Cowpea): first=98.82, best=98.82, last=66.25, forget=32.57
+  2 (Soybean): first=99.75, best=99.75, last=98.18, forget=1.57
+  3 (Sorghum): first=99.68, best=99.68, last=99.15, forget=0.53
+  4 (Water spinach): first=100.00, best=100.00, last=100.00, forget=0.00
+  5 (Watermelon): first=96.53, best=96.53, last=78.98, forget=17.55
+  6 (Greens): first=99.64, best=99.64, last=91.70, forget=7.94
+  7 (Trees): first=85.79, best=86.83, last=85.84, forget=0.99
+  8 (Grass): first=75.44, best=81.20, last=78.39, forget=2.81
+  9 (Red roof): first=95.48, best=95.48, last=91.13, forget=4.35
+  10 (Gray roof): first=96.45, best=96.45, last=66.03, forget=30.42
+  11 (Plastic): first=100.00, best=100.00, last=24.89, forget=75.11
+  12 (Bare soil): first=55.56, best=55.56, last=44.16, forget=11.39
+  13 (Road): first=93.99, best=93.99, last=51.69, forget=42.30
+  14 (Bright object): first=99.87, best=99.87, last=95.60, forget=4.28
+  15 (Water): first=99.97, best=99.97, last=99.97, forget=0.00
+
+Final Per-Class Acc:
+  0 (Strawberry): 80.85%
+  1 (Cowpea): 66.25%
+  2 (Soybean): 98.18%
+  3 (Sorghum): 99.15%
+  4 (Water spinach): 100.00%
+  5 (Watermelon): 78.98%
+  6 (Greens): 91.70%
+  7 (Trees): 85.84%
+  8 (Grass): 78.39%
+  9 (Red roof): 91.13%
+  10 (Gray roof): 66.03%
+  11 (Plastic): 24.89%
+  12 (Bare soil): 44.16%
+  13 (Road): 51.69%
+  14 (Bright object): 95.60%
+  15 (Water): 99.97%

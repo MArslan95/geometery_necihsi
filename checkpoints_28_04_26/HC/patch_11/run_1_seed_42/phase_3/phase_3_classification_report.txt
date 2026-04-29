@@ -1,0 +1,44 @@
+Classification Report - Phase 3
+==========================================================================================
+
+OA: 86.2897%
+AA: 86.7815%
+Kappa: 84.5180%
+Macro-F1: 84.1733%
+
+               precision    recall  f1-score   support
+
+   Strawberry     0.9673    0.8847    0.9242     31314
+       Cowpea     0.9749    0.7415    0.8423     15927
+      Soybean     0.9798    0.9768    0.9783      7201
+      Sorghum     0.9979    0.9933    0.9956      3747
+Water spinach     0.9578    1.0000    0.9785       840
+   Watermelon     0.8031    0.8267    0.8147      3173
+       Greens     0.5911    0.9831    0.7383      4132
+        Trees     0.8207    0.8683    0.8438     12584
+        Grass     0.7172    0.8120    0.7617      6628
+     Red roof     0.9935    0.9414    0.9668      7361
+    Gray roof     0.8793    0.9259    0.9020     11838
+      Plastic     0.6700    0.5693    0.6156      2575
+    Bare soil     0.7124    0.5556    0.6243      6381
+         Road     0.7533    0.9399    0.8363     12992
+Bright object     0.6723    0.9987    0.8036       795
+
+     accuracy                         0.8629    127488
+    macro avg     0.8327    0.8678    0.8417    127488
+ weighted avg     0.8770    0.8629    0.8638    127488
+
+
+Old/New Split
+-------------
+Old Accuracy: 87.0844%
+New Accuracy: 82.0607%
+Harmonic Mean: 84.4979%
+Old Samples: 107320
+New Samples: 20168
+
+Invalid Prediction Rate
+-----------------------
+0.0000%
+Predicted unseen classes: []
+Predicted unseen count: 0

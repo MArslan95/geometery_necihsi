@@ -1,0 +1,16 @@
+true\pred,Alfalfa,Corn-notill,Corn-mintill,Corn,Grass-pasture,Grass-trees,Grass-pasture-mowed,Hay-windrowed,Oats,Soybean-notill,Soybean-mintill,Soybean-clean,Wheat,Woods,Buildings-Grass-Trees-Drives
+Alfalfa,21,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Corn-notill,1,770,9,9,1,2,0,0,0,125,62,20,0,0,0
+Corn-mintill,0,27,468,3,2,0,0,0,0,14,47,16,4,0,0
+Corn,0,0,0,166,0,0,0,0,0,0,0,0,0,0,0
+Grass-pasture,0,3,0,0,320,1,13,0,0,0,0,0,0,1,0
+Grass-trees,0,0,0,0,6,497,0,0,0,0,1,0,0,7,0
+Grass-pasture-mowed,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0
+Hay-windrowed,0,3,0,0,0,0,0,326,0,1,4,0,0,0,0
+Oats,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+Soybean-notill,2,25,16,0,1,1,0,0,0,577,25,26,0,0,8
+Soybean-mintill,0,123,40,0,5,13,0,0,0,69,1433,20,0,2,13
+Soybean-clean,0,28,11,5,0,0,0,0,0,8,1,362,0,0,0
+Wheat,0,0,0,0,5,0,0,0,0,0,0,0,139,0,0
+Woods,0,0,0,0,2,0,0,0,0,1,0,0,0,832,51
+Buildings-Grass-Trees-Drives,0,0,0,0,0,0,0,0,0,0,0,1,0,0,269

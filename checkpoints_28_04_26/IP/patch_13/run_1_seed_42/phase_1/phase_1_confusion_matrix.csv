@@ -1,0 +1,10 @@
+true\pred,Alfalfa,Corn-notill,Corn-mintill,Corn,Grass-pasture,Grass-trees,Grass-pasture-mowed,Hay-windrowed,Oats
+Alfalfa,21,0,0,0,0,0,0,0,0
+Corn-notill,0,988,1,0,5,5,0,0,0
+Corn-mintill,0,56,508,3,4,2,0,0,8
+Corn,0,4,6,156,0,0,0,0,0
+Grass-pasture,0,0,0,0,330,0,7,0,1
+Grass-trees,0,1,0,2,4,504,0,0,0
+Grass-pasture-mowed,0,0,0,0,0,0,5,0,0
+Hay-windrowed,0,0,0,0,0,0,0,334,0
+Oats,0,0,0,0,0,0,0,0,1

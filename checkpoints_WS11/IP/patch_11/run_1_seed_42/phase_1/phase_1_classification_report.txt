@@ -1,0 +1,38 @@
+Classification Report - Phase 1
+==========================================================================================
+
+OA: 96.0081%
+AA: 97.6822%
+Kappa: 94.9400%
+Macro-F1: 90.4157%
+
+                     precision    recall  f1-score   support
+
+            Alfalfa     0.8400    1.0000    0.9130        21
+        Corn-notill     0.9507    0.9660    0.9583       999
+       Corn-mintill     0.9743    0.9122    0.9422       581
+               Corn     0.9274    1.0000    0.9623       166
+      Grass-pasture     0.9640    0.9497    0.9568       338
+        Grass-trees     0.9766    0.9785    0.9775       511
+Grass-pasture-mowed     0.2778    1.0000    0.4348         5
+      Hay-windrowed     1.0000    0.9850    0.9925       334
+               Oats     1.0000    1.0000    1.0000         1
+
+           accuracy                         0.9601      2956
+          macro avg     0.8790    0.9768    0.9042      2956
+       weighted avg     0.9637    0.9601    0.9612      2956
+
+
+Old/New Split
+-------------
+Old Accuracy: 95.6804%
+New Accuracy: 98.5294%
+Harmonic Mean: 97.0840%
+Old Samples: 2616
+New Samples: 340
+
+Invalid Prediction Rate
+-----------------------
+0.0000%
+Predicted unseen classes: []
+Predicted unseen count: 0

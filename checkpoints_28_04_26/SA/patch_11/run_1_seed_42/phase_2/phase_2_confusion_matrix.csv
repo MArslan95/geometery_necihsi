@@ -1,0 +1,13 @@
+true\pred,Weeds_1,Weeds_2,Fallow,Fallow_rough_plow,Fallow_smooth,Stubble,Celery,Grapes_untrained,Soil_vinyard_develop,Corn_Weeds,Lettuce_4wk,Lettuce_5wk
+Weeds_1,1396,10,0,0,0,0,0,0,0,0,0,0
+Weeds_2,4,2604,0,0,0,0,0,0,0,0,0,0
+Fallow,0,0,1383,0,0,0,0,0,0,0,0,0
+Fallow_rough_plow,0,0,0,974,2,0,0,0,0,0,0,0
+Fallow_smooth,0,0,0,20,1854,0,0,0,0,0,0,0
+Stubble,0,0,0,0,0,2771,0,0,0,0,0,0
+Celery,0,0,0,0,0,0,2505,0,0,0,0,0
+Grapes_untrained,0,0,0,0,0,0,0,7865,0,25,0,0
+Soil_vinyard_develop,0,0,0,0,0,0,0,0,4319,23,0,0
+Corn_Weeds,0,0,2,0,0,0,0,0,0,2292,0,0
+Lettuce_4wk,0,0,0,0,0,0,0,0,0,0,747,0
+Lettuce_5wk,0,0,2,0,0,0,0,0,0,0,0,1347
