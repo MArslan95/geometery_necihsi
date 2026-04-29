@@ -1,127 +1,85 @@
-# NECIL-HSI: Non-Exemplar Class Incremental Learning for HSI Classification
+# Geometry-Native NECIL-HSI: Non-Exemplar Class-Incremental Learning for Hyperspectral Image Classification
 
-A PyTorch implementation of Dynamic Augmented Memory (DAM) based architecture for class-incremental learning on Hyperspectral Images without storing exemplars.
+A PyTorch implementation of a **Geometry-Native Non-Exemplar Class-Incremental Learning framework for Hyperspectral Image Classification**.
 
-## Architecture Overview
+This project does **not** store old exemplars. Instead, each class is represented through a reliability-aware geometric memory consisting of class means, low-rank subspaces, variance estimates, spectral prototypes, band-importance statistics, and concept anchors. Incremental learning is performed using geometry replay, geometry alignment, old/new separation, and calibrated geometry-based classification.
 
-```
-HSI Cube → Patches → Spatial-Spectral Feature Extractor → Semantic Token (z)
-                            ↓
-                   Dynamic Augmented Memory (DAM)
-                   ├── Refiner(z) → Q
-                   ├── Extractor(z) → Km  
-                   ├── Composer(z) → Vm
-                   ├── SCM (Semantic Class Memory)
-                   └── Differential Semantic Attention
-                            ↓
-                       Classifier → Predictions
-```
+---
 
-## Installation
+## Core Idea
 
-```bash
-# Create environment
-conda create -n necil_hsi python=3.10
-conda activate necil_hsi
+Most class-incremental HSI methods either store old samples or rely on simple prototype memory. This project follows a stricter non-exemplar setting:
 
-# Install PyTorch with CUDA 12.6
-pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu126
+```text
+No old raw pixels.
+No old image patches.
+No exemplar buffer.
 
-# Install dependencies
-pip install -r requirements.txt
-```
+Class c memory:
+  ├── mean vector
+  ├── low-rank basis
+  ├── eigenvalue / variance profile
+  ├── residual variance
+  ├── active rank
+  ├── reliability score
+  ├── spectral prototype
+  ├── band importance
+  └── concept anchors
 
-## Project Structure
 
-```
-NECIL_HSI_DAM/
-├── config/
-│   └── config.py           # Dataset configs & hyperparameters
+
+  HSI Cube
+  ↓
+PCA / Spectral Reduction
+  ↓
+Patch Extraction
+  ↓
+Spectral-Spatial Backbone
+  ↓
+Projection Head
+  ↓
+Geometry Feature Space
+  ↓
+Reliability-Aware Geometry Bank
+  ├── Class mean
+  ├── Low-rank basis
+  ├── Variance / residual variance
+  ├── Active rank
+  ├── Reliability
+  ├── Spectral prototype
+  └── Band importance
+  ↓
+Geometry Transport Calibration
+  ↓
+Geometry-Native Classifier
+  ↓
+Predictions
+
+
+GNECILHSI/
 ├── data/
-│   ├── hsi_loader.py       # Load HSI .mat files
-│   ├── patch_extractor.py  # Extract patches
-│   └── incremental_dataset.py  # Manage incremental splits
+│   ├── hsi_dataloader_pytorch.py     # HSI loading, PCA, patch extraction
+│   └── incremental_dataset.py        # Class-incremental phase splits
+│
 ├── models/
-│   ├── feature_extractor.py    # 3D-CNN backbone
-│   ├── semantic_token.py       # Token generator
-│   ├── dam.py                  # Dynamic Augmented Memory
-│   ├── classifier.py           # Incremental classifier
-│   └── necil_model.py          # Full model
+│   ├── backbone.py                   # Spectral-spatial feature extractor
+│   ├── token.py                      # Optional semantic/token refinement
+│   ├── geometry_bank.py              # Reliability-aware low-rank geometry memory
+│   ├── classifier.py                 # Geometry-native classifier
+│   └── necil_model.py                # Full NECIL-HSI model
+│
 ├── losses/
-│   ├── cross_entropy.py        # CE loss (new classes)
-│   ├── contrastive.py          # Memory alignment
-│   ├── memory_stability.py     # Prevent forgetting
-│   ├── calibration.py          # Classifier calibration
-│   └── combined.py             # Combined NECIL loss
+│   └── necil_losses.py               # Geometry, spectral, token, replay losses
+│
 ├── trainers/
-│   └── incremental_trainer.py  # Training loop
+│   ├── trainer.py                    # Base and incremental training loop
+│   └── trainer_helpers.py            # Geometry extraction and memory refresh
+│
 ├── utils/
-│   ├── metrics.py              # Evaluation metrics
-│   └── visualization.py        # Plotting
-├── datasets/                   # Your HSI data (.mat files)
-├── main.py                     # Entry point
+│   ├── eval.py                       # CIL metrics and classification reports
+│   └── visualize.py                  # Phase maps, confidence maps, training curves
+│
+├── datasets/                         # HSI datasets
+├── checkpoints/                      # Saved models, reports, maps
+├── main.py                           # Entry point
 └── requirements.txt
-```
-
-## Usage
-
-### Quick Test
-```bash
-python main.py --dataset Indian_pines --epochs_base 5 --epochs_inc 3 --test_mode
-```
-
-### Full Training
-```bash
-python main.py --dataset Indian_pines --epochs_base 100 --epochs_inc 50
-```
-
-### All Options
-```bash
-python main.py \
-    --dataset PaviaU \
-    --data_dir ./datasets \
-    --patch_size 11 \
-    --hidden_dim 256 \
-    --epochs_base 100 \
-    --epochs_inc 50 \
-    --batch_size 64 \
-    --lr_base 0.001 \
-    --lr_inc 0.0005 \
-    --lambda_ce 1.0 \
-    --lambda_cma 0.5 \
-    --lambda_msl 0.3 \
-    --lambda_cc 0.2 \
-    --seed 42
-```
-
-## Supported Datasets
-
-| Dataset | Classes | Bands | Size |
-|---------|---------|-------|------|
-| Indian_pines | 16 | 200 | 145×145 |
-| PaviaU | 9 | 103 | 610×340 |
-| PaviaC | 9 | 102 | 1096×715 |
-| Salinas | 16 | 204 | 512×217 |
-| Houston13 | 15 | 144 | 349×1905 |
-| KSC | 13 | 176 | 512×614 |
-| Botswana | 14 | 145 | 1476×256 |
-
-## Incremental Learning Setup
-
-- **Phase 0 (Base)**: ~50% of classes
-- **Phase 1-N (Incremental)**: 2 classes per phase
-
-## Loss Functions
-
-| Loss | Description |
-|------|-------------|
-| **CE** | Cross Entropy (new class samples only) |
-| **CMA** | Contrastive Memory Alignment |
-| **MSL** | Memory Stability Loss |
-| **CC** | Classifier Calibration |
-
-**Total**: `L = λ₁·CE + λ₂·CMA + λ₃·MSL + λ₄·CC`
-
-## Reference
-
-This implementation is based on the architecture shown in the provided diagram for Non-Exemplar Class Incremental Learning with Dynamic Augmented Memory.
